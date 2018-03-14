@@ -1,0 +1,57 @@
+﻿@model TestFinal.Models.KontaktTelefon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KontaktTelefon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OznakaTelefona)
+           
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OznakaTelefona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojTelefona)
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojTelefona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lokal)
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lokal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Ime)
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Ime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDTel }) |
+
+    @Html.ActionLink("Nazad", "Index", new { id = Model.IDOsoba }) |
+
+    <a href="javascript:window.print()">Print</a>
+</p>

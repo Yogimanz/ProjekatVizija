@@ -1,0 +1,51 @@
+﻿@model TestFinal.Models.Kontakt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kontakt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)<p></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)<p></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RadnoMesto)<p></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RadnoMesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlavnaTabela.NazivPreduzeca)<p></p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlavnaTabela.NazivPreduzeca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Nazad", "Index", new { id = Model.IDPreduzeca })
+    <a href="javascript:window.print()">Print</a>
+</p>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<TestFinal.Models.Kontakt>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    Zaposleni - @ViewBag.Pom
+    <span style="font-size: 40%">   @Html.ActionLink("[Dodaj Novog]", "Create", new { id = ViewBag.Id }) </span>
+</h2>
+
+
+<table class="table table-hover table-responsive table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RadnoMesto)
+        </th>
+
+        <th>Telefoni</th>
+
+        <th>E-mail</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RadnoMesto)
+            </td>
+            <td>
+                @Html.ActionLink("Izlistaj", "Index", "KontaktTelefons", new { id = item.IDOsoba }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Prikaži", "Index", "KontaktMail", new { id = item.IDOsoba }, null)
+            </td>
+
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.IDOsoba }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.IDOsoba }) |
+                @Html.ActionLink("Izbriši", "Delete", new { id = item.IDOsoba })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Nazad", "Index", "GlavnaTabela", new { id = ViewBag.Id }, null)
+</div>

@@ -1,0 +1,106 @@
+﻿@model TestFinal.Models.GlavnaTabela
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GlavnaTabela</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivPreduzeca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivPreduzeca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdresaRegistracijePreduzeca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdresaRegistracijePreduzeca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opstina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaticniBrojPreduzeca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaticniBrojPreduzeca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrRacuna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrRacuna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebStranica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </dt>
+
+        <dd>
+            @{
+            if (Model.Fotografija != null)
+            {
+            var base64 = Convert.ToBase64String(Model.Fotografija);
+            var imgSrc = string.Format("data: image/gif; base64, {0}", base64);
+            <img src='@imgSrc' style="max-width:20%; max-height:20%" />
+             }
+
+            }
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beleska)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
